@@ -1,0 +1,10 @@
+/* style.css */
+.image-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+img {
+    width: 100%;
+    height: auto;
+}

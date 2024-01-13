@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zdjęcie Dnia</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="image-container">
+    <img id="dailyImage" src="" alt="Zdjęcie dnia">
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('/image')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('dailyImage').src = data;
+            });
+    });
+</script>
+
+
+</body>
+</html>

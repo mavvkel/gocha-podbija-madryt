@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Zdjęcie Dnia</title>
+    <meta charset="utf-8">
+    <title>Zdjęcie dnia</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
+<h1>
+  Zdjęcie na dziś :)
+</h1>
 <div class="imgbox">
     <img id="dailyImage" src="" alt="Daily photo">
 </div>
 
+<script src="./images.txt"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-      image_array = [
-        'IMG_0096.PNG',
-        'IMG_5632.jpeg',
-        'IMG_5863.jpeg',
-        'IMG_6042.jpeg',
-        'IMG_6257.jpeg',
-      ]
-      
+
       const random_index = Math.floor(Math.random() * image_array.length);
       const selected_image = image_array[random_index];
 
-        document.getElementById('dailyImage').src = `./images/${selected_image}`;
+      document.getElementById('dailyImage').src = `./images/${selected_image}`;
     });
 </script>
 

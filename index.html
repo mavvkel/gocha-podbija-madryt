@@ -2,20 +2,28 @@
 <html>
 <head>
     <title>Zdjęcie Dnia</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 <div class="image-container">
-    <img id="dailyImage" src="" alt="Zdjęcie dnia">
+    <img id="dailyImage" src="" alt="Daily photo">
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        fetch('/image')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('dailyImage').src = data;
-            });
+      image_array = [
+        'IMG_0096.PNG',
+        'IMG_5632.jpeg',
+        'IMG_5863.jpeg',
+        'IMG_6042.jpeg',
+        'IMG_6257.jpeg',
+      ]
+      
+      const random_index = Math.floor(Math.random() * image_array.length);
+      const selected_image = image_array[random_index];
+      console.log(selected_image)
+
+        document.getElementById('dailyImage').src = `./images/${selected_image}`;
     });
 </script>
 
